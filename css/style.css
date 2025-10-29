@@ -63,9 +63,8 @@ body{
     font-size: 20px;
     font-weight: 600;
 }
-
 #navbar-bottom{
-    display: flex;
+    display: none;
     position: fixed;
     bottom: 0;
     background-color: black;
@@ -78,13 +77,27 @@ body{
 #navbar-bottom p{
     color: white;
     font-weight: 400;
-    
 }
-
 #navbar-bottom a{
     display: flex;
     flex-direction: column;
     align-items: center;}
 #navbar-bottom img{
     height: 60px;
+}
+@media (max-width: 600px) {
+  #navbar-bottom {
+    display: flex;
+  }
+  #navbar-content-container {
+    display: none !important;
+  }
+}
+@media (min-width: 601px) {
+  #navbar-bottom {
+    display: none;
+  }
+  #navbar-content-container {
+    display: flex;
+  }
 }
