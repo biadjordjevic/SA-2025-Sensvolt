@@ -101,3 +101,15 @@ body{
     display: flex;
   }
 }
+
+
+/* parte do lucki */
+.graf_conteudo{
+    display: flex;
+    justify-content: center;
+}
+.grafico{
+    width: 70%;
+    height: auto;
+    
+}
