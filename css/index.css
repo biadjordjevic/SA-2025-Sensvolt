@@ -1,0 +1,214 @@
+/* ==================== RESET GERAL ==================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(233, 236, 236);
+}
+
+/* ==================== NAVBAR SUPERIOR ==================== */
+#navbar-site {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+    height: 100px;
+    width: 100%;
+    background-color: black;
+}
+
+#logo-site img {
+    height: 14rem;
+}
+
+#navbar-content-container {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+#icone-perfil-container img {
+    height: 40px;
+}
+
+/* Ícone do menu */
+#menu-nav-site {
+    position: relative;
+}
+
+#menu-nav-site .icone-menu img {
+    height: 35px;
+    cursor: pointer;
+}
+
+/* ==================== MODAL DO MENU ==================== */
+#modal-menu-site {
+    display: none; /* inicialmente escondido */
+    position: absolute;
+    top: 50px;
+    right: 0;
+    width: 180px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+
+#modal-menu-site.active {
+    display: block;
+}
+
+.modal-menu-content {
+    padding: 15px;
+}
+
+.modal-menu-content ul {
+    list-style: none;
+}
+
+.modal-menu-content ul li {
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.modal-menu-content ul li:last-child {
+    border-bottom: none;
+}
+
+.modal-menu-content ul li a {
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.modal-menu-content ul li a:hover {
+    color: #FDD226;
+}
+
+/* ==================== BANNER PRINCIPAL ==================== */
+#banner-tela-inicial {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    animation: fadeIn 1.2s ease-in-out;
+}
+
+#banner-tela-inicial img {
+    width: 100%;
+    height: 70vh;
+    object-fit: cover;
+    display: block;
+}
+
+/* Efeito suave de entrada */
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(1.03); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* ==================== ÁREA DE DISPOSITIVOS ==================== */
+#area-dispositivos {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Espaço branco entre o banner e a barra amarela */
+#espaco-branco {
+    background-color: #ffffff;
+    height: 90px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding-left: 40px;
+    padding-bottom: 10px;
+}
+
+#espaco-branco p {
+    font-size: 18px;
+    font-weight: 500;
+    color: #000;
+    margin: 0;
+}
+
+/* Barra amarela */
+#barra-amarela {
+    background-color: #FDD226;
+    width: 100%;
+    height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 40px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+/* Botão “+” */
+#botao-add {
+    background: none;
+    border: none;
+    font-size: 50px;
+    font-weight: bold;
+    color: #000;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+#botao-add:hover {
+    transform: scale(1.2);
+}
+
+/* ==================== NAVBAR INFERIOR (para mobile) ==================== */
+#navbar-bottom {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    background-color: black;
+    width: 100%;
+    height: 100px;
+    gap: 7rem;
+    justify-content: center;
+    align-items: center;
+}
+
+#navbar-bottom p {
+    color: white;
+    font-weight: 400;
+}
+
+#navbar-bottom a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#navbar-bottom img {
+    height: 60px;
+}
+
+@media (max-width: 600px) {
+    #navbar-bottom {
+        display: flex;
+    }
+    #navbar-content-container {
+        display: none !important;
+    }
+    #banner-tela-inicial img {
+        height: 50vh;
+    }
+}
+
+@media (min-width: 601px) {
+    #navbar-bottom {
+        display: none;
+    }
+    #navbar-content-container {
+        display: flex;
+    }
+}

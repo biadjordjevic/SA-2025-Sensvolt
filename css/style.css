@@ -7,6 +7,8 @@ body{
     background-color: rgb(233, 236, 236);
 }
 
+/*NAVBAR*/
+
 #navbar-site{
     display: flex;
     align-items: center;
@@ -101,7 +103,6 @@ body{
     display: flex;
   }
 }
-
 
 /* parte do lucki */
 .graf_conteudo{
