@@ -1,41 +1,58 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro</title>
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/index.css">
+    <title>Sensvolt</title>
 </head>
 <body>
+    <!-- NAVBAR -->
+    <nav id="navbar-site">
+        <div id="logo-site">
+            <img src="/assets/imgs/logo2 (9).png" alt="logo sensvolt">
+        </div>
 
-    
-    <div id="container-conteudo">
-        <p class="texto-cadastro">Preencha os dados abaixo para se cadastrar</p>
-        <input type="text" name="username" id="username" placeholder="Usuário">
-        <input type="email" name="email" id="email" placeholder="Email">
-        <input type="tel" name="telefone" id="telefone" placeholder="Telefone">
-        <input type="password" name="senha" id="senha" placeholder="Senha">
-        <input type="password" name="senha" id="confirmar-senha" placeholder="Confirmação de senha">
+        <div id="navbar-content-container">
+            <div id="icone-perfil-container">
+                <img src="/assets/icones/icones sa.png" alt="ícone do perfil">
+            </div>
+
+            <div id="menu-nav-site">
+                <div class="icone-menu" id="btn-menu">
+                    <img src="/assets/icones/menu-icone-claro.png" alt="ícone menu">
+                </div>
+
+                <!-- MENU MODAL -->
+                <div id="modal-menu-site">
+                    <div class="modal-menu-content">
+                        <ul>
+                            <li><a href="#">Início</a></li>
+                            <li><a href="#">Suporte</a></li>
+                            <li><a href="#">Obter controle</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- BANNER -->
+    <div id="banner-tela-inicial">
+        <img src="/assets/imgs/banner-site.png" alt="Banner Sensvolt">
     </div>
-    
-    <footer id="navbar-bottom">
-        <a>
-         <img src="/assets/icones/mobile-nav-compras.png" alt="">
-         <p>Obter</p>
-        </a>
-        <a>
-        <img src="/assets/icones/mobile-nav-suporte.png" alt="">
-        <p>Suporte</p>
-        </a>
-        <a>
-        <img src="/assets/icones/mobile-nav-dispositivo.png" alt="">
-        <p>Dispositivos</p>
-        </a>
-        <a>
-        <img src="/assets/icones/mobile-nav-perfil.png" alt="">
-        <p>Suporte</p>
-        </a>
-    </footer>
-    <script src="/js/script.js"></script>
+
+    <!-- SEÇÃO DE DISPOSITIVOS -->
+    <div id="area-dispositivos">
+        <div id="espaco-branco">
+            <p>Dispositivos conectados:</p>
+        </div>
+
+        <div id="barra-amarela">
+            <button id="botao-add">+</button>
+        </div>
+    </div>
+
+    <script src="/js/index.js"></script>
 </body>
 </html>
