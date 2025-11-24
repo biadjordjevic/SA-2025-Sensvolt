@@ -1,0 +1,142 @@
+
+.caixaFlex{
+    display: flex;
+    flex-direction: row;
+    margin-top: 30px;
+}
+.tituloPart2{
+    display: flex;
+    flex-direction: row;
+}
+.imagemFundo{
+    width: 600px;
+}
+.formulario{
+    margin-top: 90px;
+    margin-left: 80px;
+}
+.info{
+    font-size: 32px;
+    font-weight: 400;
+}
+.informacao{
+    font-size: 18px;
+    color: #686868;
+    font-weight: 500;
+    margin-top: 10px;
+}
+.arCond{
+    font-size: 30px;
+    font-weight: 300;
+    margin-top: 10px;
+}
+.formParte1{
+    margin-bottom: 35px;
+}
+.tituloGasto{
+    font-size: 35px;
+    font-weight: 500;
+}
+.titPart2Img{
+    width: 35px;
+    padding-top: 3px;
+    padding-left: 5px;
+}
+.descricaoPart2{
+    display: flex;
+    flex-direction: row;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+.iconPergunta{
+    width: 30px;
+    margin-right: 10px
+}
+.pergunta{
+    border: 0cap;
+    background-color: rgb(233, 236, 236);
+}
+.pergunta:hover{
+    cursor: pointer;
+}
+.tituloCodPart2{
+    color: #686868;
+    font-size: 30px;
+    font-weight: 300;
+    margin-right: 30px;
+}
+.tituloLimite{
+    font-size: 30px;
+    font-weight: 500;
+}
+.formPart3{
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+
+}
+.boxOp{
+    margin-top: 20px;
+}
+.opcoes{
+    display: flex;
+    flex-direction: row;
+}
+.opImg{
+    width: 23px;
+    height: 25px;
+    margin-top: 10px;
+}
+.opText{
+    margin-top: 7px;
+    font-size: 25px;
+    margin-left: 10px;
+    color: #686868;
+    font-weight: lighter;
+}
+.ajuda{
+    align-content: end;
+}
+.butAjuda{
+    width: 50px;
+    height: 50px;
+    border: 0cap;
+    background-color: rgb(233, 236, 236);
+}
+.butAjuda:hover{
+    cursor: pointer;
+}
+.imgAjuda{
+    width: 45px;
+    
+}
+.separador1{
+    margin-left: 100px;
+    margin-top: 7px;
+    margin-bottom: 0%;
+    align-content: center;
+}
+.separador2{
+    margin-left: 182px;
+    margin-top: 7px;
+    margin-bottom: 0%;
+    align-content: center;
+}
+.separador3{
+    margin-left: 121px;
+    margin-top: 7px;
+    margin-bottom: 0%;
+    align-content: center;
+}
+.inp{
+width: 70px;
+height: 28px;
+border: 0;
+border-radius: 1px;
+box-shadow: 1px 4px 5px rgba(0, 0, 0, 0.493);
+}
+.inp1{
+    border: 0;
+border-radius: 1px;
+box-shadow: 1px 4px 5px rgba(0, 0, 0, 0.493);
+}

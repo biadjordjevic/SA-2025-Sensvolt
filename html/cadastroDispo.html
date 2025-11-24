@@ -42,27 +42,71 @@
 
     <div class="caixaFlex">
         <div class="imagemCaixa">
-        <img src="/assets/imgs/configDispo.png" alt="">
+        <img class="imagemFundo" src="/assets/imgs/configDispo.png" alt="">
         </div>
         <div class="formulario">
             <div class="formParte1">
-            <h2>Info:</h1> <br>
-                <h3 class="informacao">Ar condicionado cadastrado:11/05/25; dispositvo domiciliar.</h3> <br>
-                <h2>Ar-condicionado Split Convencional</h2>
+            <h1 class="info">Info:</h1> 
+                <h3 class="informacao">Ar condicionado cadastrado:11/05/25; dispositvo domiciliar.</h3> 
+                <h2 class="arCond">Ar-condicionado Split Convencional</h2>
                 </div>
                 <div class="formPart2">
                     <div class="tituloPart2">
                         <h1 class="tituloGasto">Acesso aos gastos</h1>
-                        <img src="/assets/icones/seta.png" alt="">
+                        <button class="pergunta">
+                        <img class="titPart2Img" src="/assets/icones/seta.png" alt="">
+                    </button>
                     </div>
                     <div class="descricaoPart2">
-                      <img src="/assets/icones/pergunta.png" alt="">
-                        <h2 class="tituloCodPart2">Código do dispositvo:</h2>
-                        <input type="number" name="codigoProd" id="">
+                        <button class="pergunta">
+                      <img class="iconPergunta" src="/assets/icones/pergunta.png" alt="">
+                    </button>
+                        <h2 class="tituloCodPart2">Código do dispositivo:</h2>
+                        <input type="number" class="inp1" name="codigoProd" id="">
+                </div>
+                <div class="formPart3">
+                    <div class="tituloPart3">
+                        <h1 class="tituloLimite">Estabelecer limites:</h1>
+                    </div>
+                    <div class="boxOp">
+                    <div class="opcoes">
+                        
+                        <img class="opImg" src="/assets/icones/relogio.png" alt="">
+                        <p class="opText">Tempo de Uso:</p>
+                        <div class="separador1">
+                        <input type="time" class="inp" name="inpTempo" id="">
+                    </div>
+                    </div>
+                    <div class="opcoes">
+                        
+                        <img class="opImg" src="/assets/icones/money.png" alt="">
+                        <p class="opText">Gastos:</p>
+                        <div class="separador2">
+                        <input type="number" class="inp" name="money" id="" placeholder="R$:">
+                    </div>
+                    </div>
+                    <div class="opcoes">
+                        
+                        <img class="opImg" src="/assets/icones/temp.png" alt="">
+                        <p class="opText">Temperatura:
+                        </p>
+                    
+                    <div class="separador3">
+                    <input type="number" class="inp" name="temp" id="" placeholder="">
+                </div>
+                    </div>
+                </div>
                 </div>
         </div> 
     </div>
+    <div class="ajuda">
+        <button class="butAjuda">
+            <img class="imgAjuda" src="/assets/icones/help.png" alt="">
+        </button>
+    </div>
 </div>
+
+<script src="/js/indexCadastroDispo.js"></script>
 <script src="/js/index.js"></script>
 </body>
 </html>
