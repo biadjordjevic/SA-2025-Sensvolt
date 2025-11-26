@@ -3,14 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Cadastro</title>
     <link rel="stylesheet" href="/css/index.css">
-    <link rel="stylesheet" href="/css/cadastroDispo2.css">
-    
-    
+    <link rel="stylesheet" href="/css/suporte.css">
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 </head>
 <body>
-    <nav id="navbar-site">
+   <nav id="navbar-site">
         <div id="logo-site">
             <img src="/assets/imgs/logo2 (9).png" alt="logo sensvolt">
         </div>
@@ -38,23 +37,20 @@
             </div>
         </div>
     </nav>
-    <div class="formulario">
-    <h1 class="titu">Conecte seu novo dispositivo com a plataforma:</h1>
-    <div class="form2">
-        <input class="inp" type="text" name="nomeDispo" id="" placeholder="Nome do Dispositivo">
-        <input class="inp" type="text" name="ModeloDispo" id="" placeholder="Modelo">
-        <div class="icon_pergunta">
-        <button class="pergunta">
-            <img class="iconPergunta" src="/assets/icones/pergunta.png" alt="">
-          </button>
-              <input class="inp2" type="number" class="inp1" name="codigoProd" id="" placeholder="Código do Dispositivo">
+    <div class="box">
+        <h1>Fale conosco preenchendo seu acesso, número de telefone ou email.</h1>
+        <div class="form">
+            <input type="text" name="user" id="user" placeholder="Acesso - usuário">
+            <div class="field">
+                <input type="tel" id="tel" name="Telefone" placeholder="Telefone +55 " inputmode="tel" autocomplete="tel">
+                
             </div>
-            <input class="inp" type="text" name="descricao" id="" placeholder="Descrição (Opcional)">
-            <button class="butEnv"><p>Enviar</p></button>
+            <a class="email" href="suporte_email.html">Usar email</a>
+            <a href="index.html">Voltar para o inicio</a>
+            <button type="button"><p>Enviar</p></button>
+        </div>
     </div>
-</div>
-<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
-<script src="/js/index.js"></script>
-<script src="/js/indexCadastroDispo.js"></script>
+    <script src="/js/index.js"></script>
+    <script src="/js/suporte.js"></script>
 </body>
 </html>
