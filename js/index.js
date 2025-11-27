@@ -68,3 +68,7 @@ document.addEventListener("DOMContentLoaded", function() {
     })();
 
     // acaba aqui o coiso do telefone
+
+    function grafico(){
+    window.location.href= "/html/graficos.html"
+}
