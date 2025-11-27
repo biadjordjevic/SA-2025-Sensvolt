@@ -57,9 +57,35 @@ button:hover{
     cursor: pointer;
 }
 
+
 .link-container{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+/* small alert modal */
+.small-modal{ 
+    display:none; 
+    position:fixed; 
+    inset:0; 
+    align-items:center; 
+    justify-content:center; 
+    pointer-events:none; 
+    z-index:10000; 
+}
+.small-modal.show{ 
+    display:flex; 
+    pointer-events:auto; 
+}
+.small-modal-content{ 
+    background:#808080; 
+    color:#fff; 
+    font-size:23px; 
+    padding:18px 26px; 
+    border-radius:30px; 
+    max-width:20%; 
+    box-shadow: 0 6px 18px rgba(0,0,0,0.25); 
+    text-align:center; 
+>>>>>>> cc6dd0f04e52ab96f61a8eabac56b2b723b15d33
 }

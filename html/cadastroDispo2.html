@@ -44,7 +44,7 @@
         <input class="inp" type="text" name="nomeDispo" id="" placeholder="Nome do Dispositivo">
         <input class="inp" type="text" name="ModeloDispo" id="" placeholder="Modelo">
         <div class="icon_pergunta">
-        <button class="pergunta">
+        <button id="openModal" class="pergunta">
             <img class="iconPergunta" src="/assets/icones/pergunta.png" alt="">
           </button>
               <input class="inp2" type="number" class="inp1" name="codigoProd" id="" placeholder="Código do Dispositivo">
@@ -52,6 +52,13 @@
             <input class="inp" type="text" name="descricao" id="" placeholder="Descrição (Opcional)">
             <button class="butEnv"><p>Enviar</p></button>
     </div>
+</div>
+<div id="modal" class="modal" aria-hidden="true">
+  <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <button id="closeModal" class="modal-close" aria-label="Fechar">×</button>
+    <p class="modal_titu">O que é o n° de série? Código único atribuído pelo fabricante para identificar cada unidade do produto; normalmente impresso numa etiqueta colada no aparelho.</p>
+    <img class="modal_img" src="/assets/imgs/cod_dispo.png" alt="">
+  </div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 <script src="/js/index.js"></script>

@@ -53,12 +53,12 @@
                 <div class="formPart2">
                     <div class="tituloPart2">
                         <h1 class="tituloGasto">Acesso aos gastos</h1>
-                        <button class="pergunta">
+                        <button onclick="grafico()" class="pergunta">
                         <img class="titPart2Img" src="/assets/icones/seta.png" alt="">
                     </button>
                     </div>
                     <div class="descricaoPart2">
-                        <button class="pergunta">
+                        <button  id="openModal" class="pergunta">
                       <img class="iconPergunta" src="/assets/icones/pergunta.png" alt="">
                     </button>
                         <h2 class="tituloCodPart2">Código do dispositivo:</h2>
@@ -100,13 +100,40 @@
         </div> 
     </div>
     <div class="ajuda">
-        <button class="butAjuda">
+        <button id="openChat" class="butAjuda">
             <img class="imgAjuda" src="/assets/icones/help.png" alt="">
         </button>
     </div>
 </div>
+<div id="modal" class="modal" aria-hidden="true">
+  <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <button id="closeModal" class="modal-close" aria-label="Fechar">×</button>
+    <p class="modal_titu">O que é o n° de série? Código único atribuído pelo fabricante para identificar cada unidade do produto; normalmente impresso numa etiqueta colada no aparelho.</p>
+    <img class="modal_img" src="/assets/imgs/cod_ar.png" alt="">
+  </div>
+</div>
+
+<!-- Chat IA Modal -->
+<div id="modalChat" class="modal" aria-hidden="true">
+  <div class="modal-content chat-modal" role="dialog" aria-modal="true" aria-labelledby="chatTitle">
+    
+    <button id="closeChat" class="modal-close" aria-label="Fechar">×</button>
+    <div class="chatComeco">
+    <img style="width: 35px;" src="/assets/icones/chat_ia.png" alt="">
+    <h2 id="chatTitle" style="color:black; margin-top:14px; padding-left: 6px; margin-bottom: 4px; font-size: 18px; font-weight: lighter;">Dúvidas frequentes:</h2>
+    </div>
+    <div class="chat-body">
+      <div id="messages" class="chat-messages" aria-live="polite"></div>
+      <form id="chatForm" class="chat-form" autocomplete="off">
+        <input id="chatInput" name="message" type="text" placeholder="Escreva sua pergunta..." aria-label="Mensagem" />
+        <button type="submit" id="sendBtn">Enviar</button>
+      </form>
+    </div>
+  </div>
+</div>
 
 <script src="/js/indexCadastroDispo.js"></script>
 <script src="/js/index.js"></script>
+<script src="/js/chatModal.js"></script>
 </body>
 </html>

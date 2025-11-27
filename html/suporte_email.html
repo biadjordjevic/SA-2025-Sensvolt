@@ -44,16 +44,33 @@
         <div class="form">
             <input type="text" name="user" id="user" placeholder="Acesso - usuário">
             <input type="email" name="email" placeholder="Email">
-            <div class="link-container">
-                <a class="email" href="suporte_tel.html">Usar telefone</a>
-                <a href="index.html">Voltar para o inicio</a>
-            </div>
-
-            <button type="button">
-                <p>Enviar</p>
-            </button>
+            <a class="email" href="suporte_tel.html">Usar telefone</a>
+            <a href="index.html">Voltar para o inicio</a>
+            <button type="button"><p>Enviar</p></button>
         </div>
     </div>
+
+    <!-- small alert modal -->
+    <div id="alertModal" class="small-modal" aria-hidden="true">
+      <div class="small-modal-content">
+        Tudo ok! lembre-se de verificar seu número de contato inserido e/ou email, para especificar seu problema com nossa equipe!
+      </div>
+    </div>
+
+    <script>
+      (function(){
+        const send = document.getElementById('sendBtn');
+        const modal = document.getElementById('alertModal');
+        if (!send || !modal) return;
+        function show(){
+          modal.classList.add('show');
+          modal.setAttribute('aria-hidden','false');
+          setTimeout(()=>{ modal.classList.remove('show'); modal.setAttribute('aria-hidden','true'); }, 3500);
+        }
+        send.addEventListener('click', show);
+      })();
+    </script>
+
     <script src="/js/index.js"></script>
     <script src="/js/suporte.js"></script>
 </body>

@@ -159,3 +159,6 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+    function grafico(){
+    window.location.href= "/html/graficos.html"
+}
