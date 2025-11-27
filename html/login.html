@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
+
 <body>
-      <nav id="navbar-site">
+    <nav id="navbar-site">
         <div id="logo-site">
-            <img src="/assets/imgs/logo2 (9).png" alt="logo sensvolt">
+            <img src="../assets/imgs/logo2 (9).png" alt="logo sensvolt">
         </div>
 
         <div id="navbar-content-container">
@@ -34,35 +36,39 @@
         </div>
     </nav>
 
-    
     <div id="container-conteudo">
         <p class="texto-cadastro">Faça login com o seu acesso:</p>
         <input type="text" name="username" id="username" placeholder="Usuário">
         <input type="password" name="senha" id="senha" placeholder="Senha">
-       
+        <div class="link-suporte-container">
+            <p>Tendo problemas com o login?</p> <a href="suporte_email.html">Clique aqui.</a>
+        </div>
+        <div class="link-cadastro-container">
+            <p>Não tem uma conta ainda? </p> <a href="cadastro.html">Faça seu cadastro</a>
+        </div>
+        <p class="erro" id="erro-login"></p>
+      <button id="btn-login">Entrar</button>
     </div>
-   <div class="p-container"><p>Tendo problemas com o login?</p> <a href="login.html">Clique aqui.</a></div>
     <footer id="navbar-bottom">
         <a>
-         <img src="/assets/icones/mobile-nav-compras.png" alt="">
-         <p>Obter</p>
+            <img src="/assets/icones/mobile-nav-compras.png" alt="">
+            <p>Obter</p>
         </a>
         <a>
-        <img src="/assets/icones/mobile-nav-suporte.png" alt="">
-        <p>Suporte</p>
+            <img src="/assets/icones/mobile-nav-suporte.png" alt="">
+            <p>Suporte</p>
         </a>
         <a href="index.html">
-        <img src="/assets/icones/mobile-nav-dispositivo.png" alt="">
-        <p>Dispositivos</p>
+            <img src="/assets/icones/mobile-nav-dispositivo.png" alt="">
+            <p>Dispositivos</p>
         </a>
         <a href="suporte_tel.html">
-        <img src="/assets/icones/mobile-nav-perfil.png" alt="">
-        <p>Suporte</p>
+            <img src="/assets/icones/mobile-nav-perfil.png" alt="">
+            <p>Suporte</p>
         </a>
     </footer>
-    <script src="/js/index.js"></script>
+    <script src="../js/index.js"></script>
+    <script src="../js/script.js"></script>
 </body>
-</html>
-    <script src="/js/script.js"></script>
-</body>
+
 </html>

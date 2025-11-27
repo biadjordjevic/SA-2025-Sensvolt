@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,15 +9,16 @@
     <link rel="stylesheet" href="/css/suporte.css">
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 </head>
+
 <body>
-   <nav id="navbar-site">
+    <nav id="navbar-site">
         <div id="logo-site">
             <img src="/assets/imgs/logo2 (9).png" alt="logo sensvolt">
         </div>
 
         <div id="navbar-content-container">
             <div id="icone-perfil-container">
-                <img src="/assets/icones/icones sa.png" alt="ícone do perfil">
+                <a href="login.html"><img src="/assets/icones/icones sa.png" alt="ícone do perfil"></a>
             </div>
 
             <div id="menu-nav-site">
@@ -42,12 +44,18 @@
         <div class="form">
             <input type="text" name="user" id="user" placeholder="Acesso - usuário">
             <input type="email" name="email" placeholder="Email">
-            <a class="email" href="suporte_tel.html">Usar telefone</a>
-            <a href="index.html">Voltar para o inicio</a>
-            <button type="button"><p>Enviar</p></button>
+            <div class="link-container">
+                <a class="email" href="suporte_tel.html">Usar telefone</a>
+                <a href="index.html">Voltar para o inicio</a>
+            </div>
+
+            <button type="button">
+                <p>Enviar</p>
+            </button>
         </div>
     </div>
     <script src="/js/index.js"></script>
     <script src="/js/suporte.js"></script>
 </body>
+
 </html>

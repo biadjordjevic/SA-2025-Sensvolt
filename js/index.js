@@ -68,3 +68,94 @@ document.addEventListener("DOMContentLoaded", function() {
     })();
 
     // acaba aqui o coiso do telefone
+
+
+    // JS do cadastro
+const btnCadastro = document.getElementById("btn-cadastro");
+if (btnCadastro) {
+    btnCadastro.addEventListener("click", function () {
+
+    let username = document.getElementById("username").value.trim();
+    let email = document.getElementById("email").value.trim();
+    let telefone = document.getElementById("telefone").value.trim();
+    let senha = document.getElementById("senha").value.trim();
+    let confirmarSenha = document.getElementById("confirmar-senha").value.trim();
+
+    let erro = document.getElementById("erro");
+    erro.textContent = "";
+
+    if (username === "" || email === "" || telefone === "" || senha === "" || confirmarSenha === "") {
+        erro.textContent = "Preencha todos os campos.";
+        return;
+    }
+
+    if (!email.includes("@") || !email.includes(".")) {
+        erro.textContent = "Digite um email válido.";
+        return;
+    }
+
+    if (telefone.length < 8 || telefone.length > 11) {
+        erro.textContent = "Telefone inválido.";
+        return;
+    }
+
+    if (senha !== confirmarSenha) {
+        erro.textContent = "As senhas não coincidem.";
+        return;
+    }
+
+    // Salvar no localStorage
+    let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+
+    if (usuarios.some(u => u.email === email)) {
+        erro.textContent = "Este email já está cadastrado.";
+        return;
+    }
+
+    usuarios.push({ username, email, telefone, senha });
+    localStorage.setItem("usuarios", JSON.stringify(usuarios));
+
+    alert("Cadastro realizado com sucesso!");
+    window.location.href = "login.html";
+});}
+
+// login js
+document.addEventListener("DOMContentLoaded", function () {
+    const btnLogin = document.getElementById("btn-login");
+
+    if (!btnLogin) return;
+
+    btnLogin.addEventListener("click", function () {
+        const username = document.getElementById("username").value.trim();
+        const senha = document.getElementById("senha").value.trim();
+
+        const erroLogin = document.getElementById("erro-login");
+        erroLogin.textContent = "";
+
+        if (!username || !senha) {
+            erroLogin.textContent = "Preencha todos os campos.";
+            return;
+        }
+
+        const usuariosSalvos = JSON.parse(localStorage.getItem("usuarios")) || [];
+
+        const usuarioEncontrado = usuariosSalvos.find(u => u.username === username);
+
+        if (!usuarioEncontrado) {
+            erroLogin.textContent = "Usuário não encontrado.";
+            return;
+        }
+
+        if (usuarioEncontrado.senha !== senha) {
+            erroLogin.textContent = "Senha incorreta.";
+            return;
+        }
+
+        localStorage.setItem("usuarioLogado", JSON.stringify(usuarioEncontrado));
+
+        alert("Login realizado com sucesso!");
+        window.location.href = "index.html";
+    });
+});
+
+
