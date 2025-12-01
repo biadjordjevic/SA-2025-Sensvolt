@@ -1,2 +1,5 @@
 # SA-2025-Sensvolt
--em desenvolvimento
+Projeto finalizado:
+cadastro e login de usuários ✅
+crud funcional ✅
+simulação de cadastro de dispositivos ✅
