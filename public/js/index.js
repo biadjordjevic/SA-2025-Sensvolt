@@ -18,6 +18,71 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
+// Show logged-in user in the menu modal (if any) and add logout action
+function renderUserOnMenu() {
+    const raw = localStorage.getItem('usuarioLogado');
+    const user = raw ? JSON.parse(raw) : null;
+
+    // Find every modal menu content (pages may duplicate it)
+    document.querySelectorAll('#modal-menu-site .modal-menu-content').forEach(container => {
+        // Remove any previous user-info placeholder
+        const existing = container.querySelector('.menu-user');
+        if (existing) existing.remove();
+
+        // Build the user area
+        const userDiv = document.createElement('div');
+        userDiv.className = 'menu-user';
+        userDiv.style.marginBottom = '10px';
+        userDiv.style.paddingBottom = '6px';
+        userDiv.style.borderBottom = '1px solid #eee';
+
+        if (user) {
+            const name = user.username || user.nome || user.name || 'Usuário';
+            userDiv.innerHTML = `
+                <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;">
+                    <div style="font-weight:600;color:#111;">Olá, ${escapeHtml(name)}</div>
+                    <a href="#" class="menu-logout" style="color:#c00;text-decoration:none;font-size:14px;">Sair</a>
+                </div>
+            `;
+
+            // attach logout handler
+            userDiv.querySelector('.menu-logout').addEventListener('click', (e) => {
+                e.preventDefault();
+                localStorage.removeItem('usuarioLogado');
+                // optional: also redirect to login
+                window.location.href = 'login.html';
+            });
+        } else {
+            // not logged – show links to login / cadastrar
+            userDiv.innerHTML = `
+                <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;">
+                    <a href="login.html" style="text-decoration:none;color:#111;font-weight:600;">Entrar</a>
+                    <a href="cadastro.html" style="text-decoration:none;color:#111;font-weight:600;">Cadastrar</a>
+                </div>
+            `;
+        }
+
+        // Insert userDiv at the top of the modal content
+        container.insertBefore(userDiv, container.firstChild);
+    });
+}
+
+// small helper to avoid XSS when injecting username
+function escapeHtml(unsafe) {
+    return String(unsafe)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+}
+
+// update on load and whenever the login changes
+document.addEventListener('DOMContentLoaded', renderUserOnMenu);
+window.addEventListener('storage', function(e){
+    if (e.key === 'usuarioLogado') renderUserOnMenu();
+});
+
 
 // Coisa pro campo de telefone no html/suporte_tel.html
 
@@ -160,5 +225,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     function grafico(){
-    window.location.href= "/html/graficos.html"
-}
+        // Navigate to graficos.html using a relative path so this works with both
+        // Live Server and the Express server (public is served as root).
+        window.location.href = "graficos.html";
+    }

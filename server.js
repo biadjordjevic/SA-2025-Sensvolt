@@ -8,6 +8,12 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+// quick request logger for dev (prints incoming requests so you can observe hits)
+app.use((req, res, next) => {
+  console.log(new Date().toISOString(), req.method, req.url);
+  next();
+});
+
 // Servir arquivos estáticos
 app.use(express.static(path.join(__dirname, "public")));
 
@@ -18,6 +24,10 @@ app.use(express.static(path.join(__dirname, "public")));
 // Cadastro de usuário
 app.post("/cadastro", async (req, res) => {
   const { nome, email, senha } = req.body;
+  // basic validation
+  if (!nome || !email || !senha) {
+    return res.status(400).json({ erro: 'Por favor preencha nome, email e senha.' });
+  }
 
   try {
     const senhaHash = await bcrypt.hash(senha, 10);
@@ -30,7 +40,12 @@ app.post("/cadastro", async (req, res) => {
 
     res.json(resultado.rows[0]);
   } catch (err) {
-    res.status(500).send(err.message);
+    // handle unique violation (email already exists)
+    if (err && err.code === '23505') {
+      return res.status(409).json({ erro: 'Email já cadastrado' });
+    }
+    console.error('Cadastro error:', err);
+    res.status(500).json({ erro: 'Erro interno ao cadastrar usuário' });
   }
 });
 
@@ -61,7 +76,8 @@ app.post("/login", async (req, res) => {
     });
 
   } catch (err) {
-    res.status(500).send(err.message);
+    console.error('Login error:', err);
+    res.status(500).json({ erro: 'Erro interno no login' });
   }
 });
 
@@ -138,6 +154,8 @@ app.post("/suporte", async (req, res) => {
 // =============================
 // INICIAR SERVIDOR
 // =============================
+// small healthcheck used during debugging from the frontend
+app.get('/ping', (req, res) => res.json({ ok: true }));
 app.listen(3000, () => {
   console.log("Servidor rodando na porta 3000");
 });

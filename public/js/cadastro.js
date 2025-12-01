@@ -23,10 +23,14 @@ document.getElementById("btn-cadastro").addEventListener("click", async () => {
       body: JSON.stringify({ nome, email, senha })
     });
 
-    const data = await resp.json();
+    // read response safely: some server errors may return an empty body
+    const text = await resp.text();
+    let data = null;
+    try { data = text ? JSON.parse(text) : null; } catch (parseErr) { /* ignore */ }
 
     if (!resp.ok) {
-      erro.textContent = data.erro || "Erro ao cadastrar!";
+      // show server-provided error message when present, fallback to status
+      erro.textContent = (data && data.erro) ? data.erro : (`Erro ao cadastrar (status ${resp.status})`);
       return;
     }
 
@@ -34,6 +38,7 @@ document.getElementById("btn-cadastro").addEventListener("click", async () => {
     window.location.href = "/login.html";
 
   } catch (err) {
+    console.error('Cadastro error', err);
     erro.textContent = "Erro de comunicação com servidor";
   }
 });

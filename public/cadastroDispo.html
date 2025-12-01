@@ -4,24 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro</title>
-    <link rel="stylesheet" href="/css/index.css">
-    <link rel="stylesheet" href="/css/cadastroDispo.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/cadastroDispo.css">
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 </head>
 <body>
    <nav id="navbar-site">
         <div id="logo-site">
-            <img src="/assets/imgs/logo2 (9).png" alt="logo sensvolt">
+            <img src="assets/imgs/logo2 (9).png" alt="logo sensvolt">
         </div>
 
         <div id="navbar-content-container">
             <div id="icone-perfil-container">
-                <img src="/assets/icones/icones sa.png" alt="ícone do perfil">
-            </div>
+                <a href="login.html"><img src="assets/icones/icones sa.png" alt="ícone do perfil">
+            </a>
+                </div>
 
             <div id="menu-nav-site">
                 <div class="icone-menu" id="btn-menu">
-                    <img src="/assets/icones/menu-icone-claro.png" alt="ícone menu">
+                    <img src="assets/icones/menu-icone-claro.png" alt="ícone menu">
                 </div>
 
                 <!-- MENU MODAL -->
@@ -42,7 +43,7 @@
 
     <div class="caixaFlex">
         <div class="imagemCaixa">
-        <img class="imagemFundo" src="/assets/imgs/configDispo.png" alt="">
+        <img class="imagemFundo" src="assets/imgs/configDispo.png" alt="">
         </div>
         <div class="formulario">
             <div class="formParte1">
@@ -53,13 +54,13 @@
                 <div class="formPart2">
                     <div class="tituloPart2">
                         <h1 class="tituloGasto">Acesso aos gastos</h1>
-                        <button onclick="grafico()" class="pergunta">
-                        <img class="titPart2Img" src="/assets/icones/seta.png" alt="">
-                    </button>
+                        <a href="graficos.html" class="pergunta" title="Ir para gráficos">
+                            <img class="titPart2Img" src="assets/icones/seta.png" alt="">
+                        </a>
                     </div>
                     <div class="descricaoPart2">
                         <button  id="openModal" class="pergunta">
-                      <img class="iconPergunta" src="/assets/icones/pergunta.png" alt="">
+                      <img class="iconPergunta" src="assets/icones/pergunta.png" alt="">
                     </button>
                         <h2 class="tituloCodPart2">Código do dispositivo:</h2>
                         <input type="number" class="inp1" name="codigoProd" id="">
@@ -71,7 +72,7 @@
                     <div class="boxOp">
                     <div class="opcoes">
                         
-                        <img class="opImg" src="/assets/icones/relogio.png" alt="">
+                        <img class="opImg" src="assets/icones/relogio.png" alt="">
                         <p class="opText">Tempo de Uso:</p>
                         <div class="separador1">
                         <input type="time" class="inp" name="inpTempo" id="">
@@ -79,7 +80,7 @@
                     </div>
                     <div class="opcoes">
                         
-                        <img class="opImg" src="/assets/icones/money.png" alt="">
+                        <img class="opImg" src="assets/icones/money.png" alt="">
                         <p class="opText">Gastos:</p>
                         <div class="separador2">
                         <input type="number" class="inp" name="money" id="" placeholder="R$:">
@@ -87,7 +88,7 @@
                     </div>
                     <div class="opcoes">
                         
-                        <img class="opImg" src="/assets/icones/temp.png" alt="">
+                        <img class="opImg" src="assets/icones/temp.png" alt="">
                         <p class="opText">Temperatura:
                         </p>
                     
@@ -101,7 +102,7 @@
     </div>
     <div class="ajuda">
         <button id="openChat" class="butAjuda">
-            <img class="imgAjuda" src="/assets/icones/help.png" alt="">
+            <img class="imgAjuda" src="assets/icones/help.png" alt="">
         </button>
     </div>
 </div>
@@ -109,7 +110,7 @@
   <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
     <button id="closeModal" class="modal-close" aria-label="Fechar">×</button>
     <p class="modal_titu">O que é o n° de série? Código único atribuído pelo fabricante para identificar cada unidade do produto; normalmente impresso numa etiqueta colada no aparelho.</p>
-    <img class="modal_img" src="/assets/imgs/cod_ar.png" alt="">
+    <img class="modal_img" src="assets/imgs/cod_ar.png" alt="">
   </div>
 </div>
 
@@ -119,7 +120,7 @@
     
     <button id="closeChat" class="modal-close" aria-label="Fechar">×</button>
     <div class="chatComeco">
-    <img style="width: 35px;" src="/assets/icones/chat_ia.png" alt="">
+    <img style="width: 35px;" src="assets/icones/chat_ia.png" alt="">
     <h2 id="chatTitle" style="color:black; margin-top:14px; padding-left: 6px; margin-bottom: 4px; font-size: 18px; font-weight: lighter;">Dúvidas frequentes:</h2>
     </div>
     <div class="chat-body">
@@ -132,9 +133,9 @@
   </div>
 </div>
 
-<script src="/js/indexCadastroDispo.js"></script>
-<script src="/js/index.js"></script>
-<script src="/js/chatModal.js"></script>
-<script src="/js/cadastroDispo.js"></script>
+<script src="js/indexCadastroDispo.js"></script>
+<script src="js/index.js"></script>
+<script src="js/chatModal.js"></script>
+<script src="js/cadastroDispo.js"></script>
 </body>
 </html>

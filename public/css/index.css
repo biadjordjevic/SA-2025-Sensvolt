@@ -8,6 +8,8 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: #f3f3f3;
+    font-size: 18px; /* base font size */
+    line-height: 1.45;
 }
 
 /* ==================== NAVBAR SUPERIOR ==================== */
@@ -22,7 +24,9 @@ body {
 }
 
 #logo-site img {
-    height: 14rem;
+    height: 14rem; /* match original / style.css */
+    width: auto;
+    display: block;
 }
 
 #navbar-content-container {
@@ -49,13 +53,13 @@ body {
 #modal-menu-site {
     display: none; /* inicialmente escondido */
     position: absolute;
-    top: 50px;
-    right: 0;
-    width: 180px;
+    top: calc(100% + 8px); /* positioned a little below the menu icon */
+    right: 0; /* anchor to the right edge of the menu container */
+    width: 200px; /* standardized size */
     background-color: #fff;
     border-radius: 8px;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
-    z-index: 10;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    z-index: 999;
 }
 
 #modal-menu-site.active {
@@ -65,6 +69,10 @@ body {
 .modal-menu-content {
     padding: 15px;
 }
+
+/* Top section inside the modal used to show logged user / auth actions */
+.modal-menu-content .menu-user { font-size: 16px; }
+.modal-menu-content .menu-user a { text-decoration: none; }
 
 .modal-menu-content ul {
     list-style: none;
@@ -140,28 +148,35 @@ body {
 #barra-amarela {
     background-color: #FDD226;
     width: 100%;
-    height: 160px;
+    min-height: 140px;
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    padding: 0 40px;
+    padding: 18px 40px;
     box-sizing: border-box;
     position: relative;
 }
 
 /* Botão “+” */
 #botao-add {
-    background: none;
-    border: none;
-    font-size: 50px;
-    font-weight: bold;
-    color: #000;
-    cursor: pointer;
-    transition: transform 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+    background: #000000;
+    color: #FDD226;
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 34px;
+    font-weight: 700;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.18);
+    transition: transform 0.12s ease, box-shadow 0.12s ease;
 }
 
 #botao-add:hover {
-    transform: scale(1.2);
+    transform: translateY(-4px) scale(1.06);
+    box-shadow: 0 14px 30px rgba(0,0,0,0.22);
 }
 
 /* ==================== NAVBAR INFERIOR (para mobile) ==================== */

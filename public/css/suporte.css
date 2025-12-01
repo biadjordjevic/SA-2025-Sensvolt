@@ -26,7 +26,6 @@ input::placeholder{
     color: black;
     font-size: 18px;
     padding-left: 15px;
-    
 }
 a{
     font-size: 18px;
@@ -37,7 +36,7 @@ a{
 }
 .email{
     display: flex;
-    justify-content: baseline;
+    justify-content: center;
     font-size: 18px;
     margin-top: 20px;
     font-weight: lighter;
@@ -56,7 +55,6 @@ button{
 button:hover{
     cursor: pointer;
 }
-
 
 .link-container{
     display: flex;
@@ -87,5 +85,4 @@ button:hover{
     max-width:20%; 
     box-shadow: 0 6px 18px rgba(0,0,0,0.25); 
     text-align:center; 
->>>>>>> cc6dd0f04e52ab96f61a8eabac56b2b723b15d33
 }

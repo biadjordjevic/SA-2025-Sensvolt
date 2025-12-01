@@ -1,10 +1,16 @@
 * {
-    margin: 0%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
+html,
 body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: rgb(233, 236, 236);
+    font-size: 18px;
+    /* base font size between 18-20px as requested */
+    line-height: 1.45;
 }
 
 /*NAVBAR*/
@@ -21,7 +27,9 @@ body {
 }
 
 #logo-site img {
-    height: 14rem
+    height: 14rem; /* restored original size per request */
+    width: auto;
+    display: block;
 }
 
 #icone-perfil-container img {
@@ -36,24 +44,27 @@ body {
 
 #modal-menu-site {
     display: none; /* inicialmente escondido */
-    position: absolute;
-    top: 50px;
-    right: 20px;
-    width: 180px;
+    position: absolute; /* positioned relative to #menu-nav-site */
+    top: calc(100% + 8px); /* a little below the menu icon, consistent spacing */
+    right: 0; /* align with right edge of the menu container */
+    width: 200px; /* standardized width */
     background-color: #fff;
     border-radius: 8px;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
-    z-index: 10;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    z-index: 999;
 }
 
 #modal-menu-site.active {
     display: block;
-    margin-top: 40px;
 }
 
 .modal-menu-content {
     padding: 15px;
 }
+
+/* Top section inside the modal used to show logged user / auth actions */
+.modal-menu-content .menu-user { font-size: 16px; }
+.modal-menu-content .menu-user a { text-decoration: none; }
 
 .modal-menu-content ul {
     list-style: none;
@@ -87,18 +98,20 @@ body {
 }
 
 #container-conteudo {
-    margin-top: 50px;
+    margin: 50px auto 80px;
     padding: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    gap: 22px;
+    gap: 20px;
+    width: min(92%, 640px);
+    border-radius: 10px;
 }
 
 #container-conteudo input {
-    width: 500px;
-      height: clamp(55px, 9vh, 80px);
+    width: 100%;
+    height: clamp(48px, 7vh, 70px);
     border: none;
     border-radius: 10px;
     background-color: #FDD226;
@@ -111,8 +124,9 @@ body {
 
 .texto-cadastro {
     color: black;
-    font-size: 23px;
-    font-weight: 600;
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
 }
 
 #navbar-bottom {
@@ -179,6 +193,7 @@ body {
 
 }
 
+/* ensure primary call-to-action buttons use consistent size */
 #btn-cadastro {
     padding: 10px;
     padding-left: 30px;
@@ -198,6 +213,7 @@ body {
     color: rgb(224, 224, 224);
 }
 
+/* helper link containers */
 .link-suporte-container {
     display: flex;
     align-items: center;
@@ -237,7 +253,7 @@ body {
     padding-left: 2px;
 }
 
-#btn-login{
+#btn-login {
     padding: 10px;
     padding-left: 30px;
     padding-right: 30px;
@@ -249,18 +265,23 @@ body {
     text-decoration: none;
     color: black;
 }
+
 #btn-login:hover {
     font-size: 19px;
     box-shadow: 0px 4px 5px #00000036;
     color: rgb(224, 224, 224);
 }
-.erro{
-    color: red; 
-    text-align:center; 
-    font-weight:600; 
-    margin-top:10px;
+
+.erro {
+    color: red;
+    text-align: center;
+    font-weight: 600;
+    margin-top: 10px;
 }
 
-html, body {
+html,
+body {
     height: 100%;
 }
+
+#menu-nav-site { position: relative; }

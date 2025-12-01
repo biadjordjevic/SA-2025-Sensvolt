@@ -9,6 +9,7 @@ document.getElementById("btn-login").addEventListener("click", async () => {
   }
 
   try {
+    // send login request to relative endpoint (backend should serve this)
     const resp = await fetch("/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -22,11 +23,15 @@ document.getElementById("btn-login").addEventListener("click", async () => {
       return;
     }
 
-    // salvar ID na sessão
+    // salvar ID na sessão e usuário logado para o menu
     localStorage.setItem("usuario_id", data.usuario_id);
+    // prefer fields returned by backend (nome/email/usuario_id)
+    const userObj = { usuario_id: data.usuario_id, nome: data.nome || data.username || data.name, email: data.email };
+    localStorage.setItem('usuarioLogado', JSON.stringify(userObj));
     window.location.href = "/index.html";
 
   } catch (err) {
+    console.error('Login error', err);
     erro.textContent = "Erro de conexão com servidor!";
   }
 });
